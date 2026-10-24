@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Alina and Dmitry//Wedding 2027//RU
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:alina-dmitry-wedding-20270708@invitation.local
+DTSTAMP:20261025T000000Z
+DTSTART;VALUE=DATE:20270708
+DTEND;VALUE=DATE:20270709
+SUMMARY:Свадьба Алины и Дмитрия — сбор в 17:00
+LOCATION:Петергоф Лофт\, территория Троицкая гора\, д. 33
+DESCRIPTION:Сбор гостей в 17:00 (Москва). Выездная церемония и банкет. Можно остаться на ночь с 8 на 9 июля.
+END:VEVENT
+END:VCALENDAR

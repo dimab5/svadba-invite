@@ -1,0 +1,11 @@
+{
+  "name": "alina-dmitry-wedding",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Приглашение на свадьбу Алины и Дмитрия, июль 2027",
+  "scripts": {
+    "test": "node --test tests/site.test.cjs",
+    "qr": "node scripts/generate-qr.cjs",
+    "dev": ""
+  }
+}

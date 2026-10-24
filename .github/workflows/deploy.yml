@@ -1,0 +1,52 @@
+name: Publish wedding invitation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: wedding-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v6
+      - name: Check site and verify QR encoder
+        run: node --test tests/site.test.cjs
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Generate QR for the real Pages URL
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: node scripts/generate-qr.cjs
+      - name: Save printable QR files
+        uses: actions/upload-artifact@v4
+        with:
+          name: wedding-invitation-qr
+          path: dist/qr/
+          retention-days: 90
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Add links to workflow summary
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          printf '## Wedding invitation\n\nWebsite: %s\n\nQR download page: %sqr.html\n' "$PAGE_URL" "$PAGE_URL" >> "$GITHUB_STEP_SUMMARY"
