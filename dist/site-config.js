@@ -9,7 +9,7 @@ window.WEDDING = {
   /* При наличии ссылки на Яндекс/Google Форму анкета будет открываться по ней. */
   rsvpFormUrl: '',
   /* Для отправки анкеты прямо с сайта: адрес вашей формы Formspree. */
-  formEndpoint: '',
+  formEndpoint: 'https://formspree.io/f/mwlllqlj',
   registryMapUrl: 'https://yandex.ru/maps/?text=' + encodeURIComponent('Санкт-Петербург, Стародеревенская улица, 5'),
   /* Необязательно: ссылка на ваш Telegram или другой способ связи. */
   contactUrl: '',

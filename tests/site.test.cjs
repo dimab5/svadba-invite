@@ -53,7 +53,7 @@ test('site local links, anchors and assets exist', () => {
   assert.equal(new Set(ids).size, ids.length, 'No duplicate IDs');
   for (const [, link] of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
     if (link.startsWith('#') && link.length > 1) assert.ok(ids.includes(link.slice(1)), 'Anchor exists: ' + link);
-    if (link.startsWith('./')) assert.ok(fs.existsSync(path.join(root, 'dist', link.slice(2))), 'Asset exists: ' + link);
+    if (link.startsWith('./')) assert.ok(fs.existsSync(path.join(root, 'dist', link.slice(2).split(/[?#]/, 1)[0])), 'Asset exists: ' + link);
   }
   assert.match(html, /07\.07\.2027/);
   assert.match(html, /2027-07-08T17:40:00\+03:00/);
