@@ -56,7 +56,9 @@ test('site local links, anchors and assets exist', () => {
     if (link.startsWith('./')) assert.ok(fs.existsSync(path.join(root, 'dist', link.slice(2))), 'Asset exists: ' + link);
   }
   assert.match(html, /07\.07\.2027/);
-  assert.match(html, /8 июля 2027 · 17:00/);
+  assert.match(html, /2027-07-08T17:40:00\+03:00/);
+  assert.match(html, /2027-07-08T18:00:00\+03:00/);
+  assert.match(html, /2027-07-08T18:30:00\+03:00/);
 });
 test('palette contains five female and three male colors and valid event dates', () => {
   const context = { window: {} };
@@ -65,5 +67,5 @@ test('palette contains five female and three male colors and valid event dates',
   assert.equal(c.womenColors.length, 5); assert.equal(c.menColors.length, 3);
   for (const color of [...c.womenColors, ...c.menColors]) assert.match(color.hex, /^#[0-9A-F]{6}$/);
   assert.ok(new Date(c.familyDate) < new Date(c.celebrationDate));
-  assert.equal(new Date(c.celebrationDate).toISOString(), '2027-07-08T14:00:00.000Z');
+  assert.equal(new Date(c.celebrationDate).toISOString(), '2027-07-08T14:40:00.000Z');
 });

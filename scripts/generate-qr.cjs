@@ -46,7 +46,7 @@ function renderSvg(matrix, quiet = 4) {
   const size = matrix.length + quiet * 2;
   let cells = '';
   matrix.forEach((row, y) => row.forEach((black, x) => { if (black) cells += `M${x + quiet} ${y + quiet}h1v1h-1z`; }));
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges"><title>Приглашение на свадьбу Алины и Дмитрия</title><rect width="${size}" height="${size}" fill="#fff"/><path d="${cells}" fill="#000"/></svg>\n`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges"><title>Приглашение на свадьбу Дмитрия и Алины</title><rect width="${size}" height="${size}" fill="#fff"/><path d="${cells}" fill="#000"/></svg>\n`;
 }
 function validateUrl(value) {
   if (!value) throw new Error('Укажите полный адрес сайта: node scripts/generate-qr.cjs https://your-site.example/');
