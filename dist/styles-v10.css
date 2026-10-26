@@ -190,8 +190,8 @@
 
 /* Only the two final requested adjustments. */
 .hero h1{--name-shift:0em}
-.hero h1>span:first-child{translate:calc(-.5067em + var(--name-shift) - .625em) 0}
-.hero h1>span:last-child{translate:-20px 0!important}
+.hero h1>span:first-child{translate:calc(-.5067em + var(--name-shift)) 0}
+.hero h1>span:last-child{translate:calc(.5067em + var(--name-shift) - 10px) 0}
 .hero h1{--name-shift:.5962em}
 @media(min-width:600px) and (max-width:1023px){.hero h1{--name-shift:.5473em}}
 @media(min-width:1024px){.hero h1{--name-shift:.5562em}}
