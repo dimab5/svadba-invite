@@ -23,7 +23,7 @@
   function message(guest) {
     const lines = ['Дима и Алина, наш ответ на приглашение:', '', 'Имя: ' + guest.name, 'Праздник 8 июля: ' + labels[guest.attendance]];
     if (typeof guest.registry === 'boolean') lines.push('Роспись 7 июля: ' + (guest.registry ? 'Планирую прийти' : 'Не планирую'));
-    if (guest.guests) lines.push('Другие приглашённые: ' + guest.guests);
+    if (guest.guests) lines.push('Семья, пара и пожелания по приглашению: ' + guest.guests);
     if (guest.attendance !== 'no') {
       lines.push('Ночёвка: ' + guest.overnight);
       if (guest.drinks.length) lines.push('Напитки: ' + guest.drinks.join(', '));

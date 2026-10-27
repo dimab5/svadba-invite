@@ -6,7 +6,7 @@ function data(fields) { const d = new FormData(); for (const [key, val] of Objec
 test('the simplified family reply retains all names without inventing a registry answer', async () => {
   const guest = normalize(data({ name:'Тест', attendance:'no', guests:'  Тестовая семья  ' }));
   assert.equal(guest.guests, 'Тестовая семья');
-  assert.match(message(guest), /Другие приглашённые: Тестовая семья/);
+  assert.match(message(guest), /Семья, пара и пожелания по приглашению: Тестовая семья/);
   assert.doesNotMatch(message(guest), /Роспись 7 июля|Ночёвка/);
   await submit('https://formspree.io/f/test123', guest, async (url, options) => {
     assert.equal(options.body.get('guests'), 'Тестовая семья');

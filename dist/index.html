@@ -6,17 +6,17 @@
   <meta name="theme-color" content="#fbfaf8">
   <meta name="description" content="Дмитрий и Алина. Роспись 7 июля 2027 в 11:40. Празднование 8 июля в Петергоф Лофт, сбор гостей в 17:40.">
   <meta name="robots" content="noindex,nofollow">
-  <meta property="og:title" content="Дмитрий и Алина · Приглашение на свадьбу">
+  <meta property="og:title" content="Приглашение на свадьбу">
   <meta property="og:description" content="7 и 8 июля 2027. Будем рады разделить эти дни с вами.">
   <meta property="og:url" content="https://dimab5.github.io/svadba-invite/">
   <link rel="canonical" href="https://dimab5.github.io/svadba-invite/">
-  <title>Дмитрий и Алина · Приглашение на свадьбу</title>
+  <title>Приглашение на свадьбу</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="./assets/fonts/cormorant-infant-400.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./assets/fonts.css">
-  <link rel="stylesheet" href="./styles-v11.css">
+  <link rel="stylesheet" href="./styles-v11.css?v=13">
   <script src="./site-config.js?v=12" defer></script>
-  <script src="./form-core.js" defer></script>
+  <script src="./form-core.js?v=13" defer></script>
   <script src="./app.js" defer></script>
 </head>
 <body>
@@ -116,7 +116,7 @@
           <form id="guest-form">
             <label class="field">Имя Фамилия<input name="name" autocomplete="name" required maxlength="150" aria-label="Имя Фамилия"></label>
             <fieldset class="attendance"><legend>Присутствие</legend><label><input type="radio" name="attendance" value="yes" required> с удовольствием приду</label><label><input type="radio" name="attendance" value="no"> к сожалению не смогу</label></fieldset>
-            <label class="field family-field">Если отвечаете за семью или пару<input name="guests" maxlength="300" placeholder="Имена остальных приглашённых"></label>
+            <label class="field family-field">Если отвечаете за семью или пару<span class="field-hint" id="guests-hint">Укажите имена. Если хотите пригласить кого-то ещё, напишите, кого именно, — мы отдельно согласуем это с вами.</span><input name="guests" maxlength="300" placeholder="Имена и комментарий" aria-label="Если отвечаете за семью или пару" aria-describedby="guests-hint"></label>
             <div id="attending-fields">
               <fieldset class="overnight"><legend>Планируете остаться на ночь?</legend><label><input type="radio" name="overnight" value="Да, остаёмся" required> да</label><label><input type="radio" name="overnight" value="Не остаёмся"> нет</label><label><input type="radio" name="overnight" value="Пока не решили"> пока не знаем</label></fieldset>
             </div>
